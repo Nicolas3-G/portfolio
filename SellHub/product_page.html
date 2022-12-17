@@ -1,0 +1,881 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jacksters | CyberPunk 2077 Jacket | SellHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;1,100&display=swap"
+        rel="stylesheet">
+    <style>
+        html {
+            font-family: 'Kanit', sans-serif;
+            font-weight: 400;
+            overflow-x: initial !important;
+            /* Here we can change background to black and color to white to make it a dark mode verison
+            But the images of the clothes will look odd */
+        }
+
+        html,
+        body {
+            margin: 0;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        #logo {
+            width: 120px;
+            height: 100px;
+            border-radius: 25px;
+            grid-area: logo;
+        }
+
+        header {
+            display: grid;
+            grid-template-columns: 150px 400px auto;
+            grid-template-rows: 50px 50px;
+            grid-template-areas:
+                "logo searchbar iconbar"
+                "logo navbar iconbar";
+            margin-left: 150px;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+        }
+
+
+        #searchbar {
+            width: 80%;
+            height: 30px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            background-color: transparent;
+        }
+
+
+        #searchcell {
+            background-color: rgb(230, 230, 230);
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        #search-icon {
+            height: 12px;
+            width: 12px;
+            background-color: rgb(230, 230, 230);
+            margin-top: 14px;
+            margin-left: 8px;
+        }
+
+        #search-icon-cell {
+            width: 15px;
+        }
+
+        .navlink {
+            margin-right: 8px;
+        }
+
+
+        .navlink:hover {
+            color: rgb(234, 60, 18);
+            font-weight: bold;
+        }
+
+        #bell-icon {
+            width: 25px;
+            height: 25px;
+        }
+
+        #right-corner-ui {
+            grid-area: iconbar;
+            margin-left: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .svg-icon {
+            width: 24px;
+            height: 24px;
+            fill: rgb(234, 60, 18);
+            margin-right: 10px;
+        }
+
+        .product-heart-icon {
+            width: 24px;
+            height: 24px;
+            margin-left: 480px;
+        }
+
+        .product-heart-icon-path {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+        }
+
+        .product-heart-icon-path:hover {
+            fill: rgb(255, 51, 0);
+        }
+
+        .svg-path {
+            fill: rgb(255, 51, 0);
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+        }
+
+        .svg-path:hover {
+            fill: rgb(89, 81, 81);
+        }
+
+        #login-link {
+            font-size: 14px;
+        }
+
+        #login-link:hover {
+            color: rgb(255, 51, 0);
+            font-size: 15px;
+        }
+
+        #middle-piece {
+            color: rgb(255, 51, 0);
+            margin-left: 11px;
+            margin-right: 8px;
+        }
+
+        #signup-link {
+            font-size: 14px;
+        }
+
+        #signup-link:hover {
+            color: rgb(255, 51, 0);
+            font-size: 15px;
+        }
+
+        #product-image {
+            width: 300px;
+            height: 300px;
+        }
+
+        #product-box {
+            display: flex;
+            margin-top: 20px;
+            margin-left: 15%;
+        }
+
+        #product-info {
+            display: flex;
+            flex-direction: column;
+            margin-left: 40px;
+        }
+
+        #brand-name {
+            color: rgb(255, 51, 0);
+        }
+
+        #product-title {
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        #order-fulfillment-form {
+            background-color: rgb(235, 235, 235);
+            border-radius: 5px;
+            width: 350px;
+            padding: 15px;
+            margin-left: 25px;
+        }
+
+        .radio-labels {
+            font-weight: 300;
+            color: rgb(100, 100, 100);
+        }
+
+        .radio-button:checked+label {
+            color: black;
+
+        }
+
+        .label-extra-info {
+            color: rgb(100, 100, 100);
+            font-size: 14px;
+            font-weight: 200;
+        }
+
+        #size-box {
+            width: 350px;
+            margin: 15px 0 0 35px;
+        }
+
+        .size-radio {
+            display: none;
+
+        }
+
+        .size-radio:checked+label {
+            color: rgb(255, 51, 0);
+            border-bottom: solid 2px black;
+        }
+
+        .size-radio-text {
+            margin-right: 39px;
+        }
+
+        #add-to-cart-button:hover {
+            font-weight: 500;
+            font-size: 14px;
+            padding: 9px 0 10px 0;
+        }
+
+        #product-desc-title {
+            margin-bottom: 0;
+        }
+
+        #product-designer-title {
+            font-weight: 400;
+            margin: 8px 0 3px 15px;
+        }
+
+        #horizontal-line {
+            color: rgb(255, 51, 0);
+            width: 500px;
+            margin-left: 0;
+            margin-top: 5px;
+        }
+
+        .path-arrow {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        #path-box {
+            margin-left: 180px;
+            margin-top: 40px;
+        }
+
+        .path-text {
+            color: rgb(255, 51, 0);
+        }
+
+        #price-box {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #payment-plan-text {
+            color: rgb(200, 200, 200);
+            font-size: 12px;
+            margin-top: 19px;
+        }
+
+        #product-price {
+            font-size: 18px;
+            font-weight: 400;
+            margin-left: 24px;
+            width: 75px;
+        }
+
+        #swilo-text {
+            color: rgb(245, 5, 245);
+        }
+
+        #free-delivery-text {
+            color: rgb(255, 51, 0);
+            margin: 20px 0 0 140px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        #stock-text {
+            margin: 10px 0 0 20px;
+            font-size: 12px;
+            color: rgb(158, 153, 7);
+        }
+
+        #add-to-cart-box {
+            display: flex;
+            flex-direction: row;
+            margin-top: 35px;
+        }
+
+        #add-to-cart-button {
+            width: 180px;
+            border-radius: 25px;
+            background-color: rgb(255, 51, 0);
+            padding: 10px 0px 10px 0px;
+            border: 1px solid black;
+            margin-left: 30px;
+            font-weight: 400;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        #scroll-box {
+            background-color: rgb(255, 51, 0);
+            height: 18px;
+            margin-top: 25px;
+        }
+
+        #scroll-text {
+            margin: 0;
+            font-size: 12px;
+            animation: my-animation 25s linear infinite;
+            font-family: inherit;
+        }
+
+        @keyframes my-animation {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-120%);
+            }
+        }
+
+        #designer-facts-box {
+            margin-top: 25px;
+            display: flex;
+        }
+
+        .badge-logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .badge-card {
+            width: 100px;
+            margin-right: 80px;
+        }
+
+        .badge-text {
+            width: 100px;
+            text-align: center;
+        }
+
+        #related-products-title {
+            margin-left: 50px;
+            margin-top: 80px;
+        }
+
+        #related-products-card-box {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .related-products-card {
+            width: 250px;
+        }
+
+        .related-image {
+            width: 250px;
+            height: 300px;
+        }
+
+        .related-products-name {
+            margin-top: 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .related-products-price {
+            text-align: center;
+            font-size: 13px;
+            color: rgb(63, 60, 60)
+        }
+
+        .related-products-brand {
+            margin: 0;
+            text-align: center;
+            font-size: 10px;
+            color: rgb(255, 51, 0);
+        }
+
+        #extra-info-text {
+            color: rgb(106, 101, 101);
+            margin-top: 25px;
+            font-size: 10px;
+        }
+
+        #color-box {
+            margin-top: 24px;
+            margin-left: 35px;
+            width: 350px;
+        }
+
+        #color-select-img {
+            height: 25px;
+            width: 25px;
+            border-radius: 100%;
+            border: 2px solid black;
+            border-color: inherit;
+            padding: 3px;
+            margin-right: 28px;
+            margin-left: 28px;
+        }
+
+        .color-radio {
+            display: none;
+
+        }
+
+        .color-label {
+            border: 0px solid black;
+        }
+
+        .color-radio:checked+label {
+            border-color: rgb(234, 60, 18);
+        }
+
+        #color-title {
+            text-align: center;
+            margin-bottom: 0;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .small-horizontal-line {
+            width: 80px;
+            margin-bottom: 16px;
+            margin-top: 2px;
+            height: 2px;
+            background-color: rgb(255, 51, 0);
+            border-color: rgb(255, 51, 0);
+        }
+
+        #size-title {
+            text-align: center;
+            margin-bottom: 0;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        #copyright-footer {
+            background-color: rgb(37, 35, 35);
+            height: auto;
+        }
+
+        #email-signup-card {
+            margin-left: 30px;
+            text-align: center;
+            width: 300px;
+        }
+
+        #signup-button-footer {
+            background-color: rgb(255, 51, 0);
+            border-radius: 15%;
+            padding: 5px;
+            border: none;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+            display: block;
+        }
+
+        #email-entry {
+            padding: 3px;
+            margin-top: 5px;
+        }
+
+        #email-entry:focus {
+            outline: none;
+            box-shadow: 0 0 0 2pt rgb(234, 60, 18);
+
+        }
+
+        #email-entry::placeholder {
+            color: rgb(154, 151, 151)
+        }
+
+        #sign-up-promo-text {
+            font-size: 10px;
+            color: rgb(234, 60, 18);
+            opacity: 86%;
+            margin-top: 45px;
+            margin-bottom: 0px;
+        }
+
+        #email-privacy-policy-text {
+            font-size: 10px;
+            margin-top: 55px;
+            color: rgb(164, 160, 160);
+        }
+
+        #privacy-policy-link {
+            color: rgba(82, 82, 82, 0.573);
+        }
+
+        #privacy-policy-link:hover {
+            color: rgba(82, 82, 82, 0.748)
+        }
+
+        #footer-horizontal-line {
+            border-color: red;
+            width: 95%;
+            margin-top: 0;
+            margin-bottom: 26px;
+        }
+
+        #info-footer {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 50px;
+        }
+
+        #about-card,
+        #account-card,
+        #assistance-card {
+            margin-left: 65px;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        .vertical-footer-line {
+            height: 240px;
+            width: 1px;
+            margin-top: 15px;
+            background-color: rgba(234, 61, 18, 0.555);
+        }
+
+        .footer-card-links {
+            font-size: 14px;
+            color: rgb(105, 101, 101);
+            margin-bottom: 5px;
+        }
+
+        .footer-card-links:hover {
+            color: rgb(234, 60, 18);
+        }
+
+        #footer-logo {
+            height: 110px;
+            width: 160px;
+            border-radius: 25%;
+            margin-left: 80px;
+            margin-top: 15px
+        }
+
+        #social-card {
+            width: 450px;
+        }
+
+        #tagline-text {
+            font-size: 14px;
+            margin-left: 80px;
+            color: rgb(65, 65, 65);
+        }
+
+        #apple-download-button {
+            margin-left: 80px;
+        }
+
+
+        #footer-text {
+            text-align: center;
+            font-size: 14px;
+            color: rgb(234, 60, 18);
+            margin-bottom: 0;
+            margin-top: 16px;
+            padding-bottom: 10px;
+        }
+
+        .socials-svg {
+            height: 30px;
+            margin-top: 16px;
+            margin-left: 20px;
+            text-align: right;
+            width: 30px;
+        }
+
+        .socials-path {
+            fill: rgb(234, 60, 18);
+            margin-left: 25px;
+        }
+
+        #socials-box {
+            margin-left: 85%;
+        }
+
+        #size-option-box {
+            text-align: center;
+        }
+
+        #color-option-box {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="SH Logo.png" alt="SellHub Logo">
+        <div id="searchcell">
+            <img id="search-icon" src="search-icon.png" alt="search logo">
+            <input id="searchbar" name="searchbar" type="text" placeholder="Products, brands, and more"></input>
+        </div>
+        <navbar>
+            <a class="navlink">Home</a>
+            <a class="navlink">Marketplace</a>
+            <a class="navlink">Offers</a>
+            <a class="navlink">Sellers</a>
+            <a class="navlink">Help</a>
+            <a class="navlink">Orders</a>
+
+        </navbar>
+        <div id="right-corner-ui">
+            <div id="icon-bar">
+                <svg class="svg-icon">
+                    <path class="svg-path"
+                        d="M13.5 4.24c2.86.7 4.5 3.33 4.5 6.48v5.13l2 2.05v1.02H4V17.9l2-2.05v-5.13c0-3.16 1.63-5.79 4.5-6.48v-.7c0-.85.67-1.54 1.5-1.54s1.5.69 1.5 1.54v.7zm-1.1 17.72a2.04 2.04 0 01-2.41-2.01h4a2.04 2.04 0 01-1.59 2.01z">
+                    </path>
+                </svg>
+                <svg class="svg-icon">
+                    <path class="svg-path"
+                        d="M16.5 2.62c-1.74 0-3.41.83-4.5 2.14a5.94 5.94 0 00-4.5-2.14A5.5 5.5 0 002 8.24c0 3.86 3.4 7 8.55 11.8L12 21.36l1.45-1.35C18.6 15.25 22 12.1 22 8.24a5.5 5.5 0 00-5.5-5.62z">
+                    </path>
+                </svg>
+                <svg class="svg-icon">
+                    <path class="svg-path"
+                        d="M8 18c-1.1 0-1.99.9-1.99 2S6.9 22 8 22s2-.9 2-2-.9-2-2-2zM2 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H8.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 21 4H6.21l-.94-2H2zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z">
+                    </path>
+                </svg>
+            </div>
+            <div id="login-signup-box">
+                <a id="login-link">Login</a>
+                <span id="middle-piece">|</span>
+                <a id="signup-link">Signup</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="scroll-box">
+            <pre id="scroll-text">Cyber Monday Sale! 25% off all products!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Sign up today for 10% off promo code!
+            </pre>
+        </div>
+        <div id="path-box">
+            <span class="path-text">Men's Apperal</span><span class="path-arrow">></span>
+            <span class="path-text">Jackets</span><span class="path-arrow">></span>
+            <span class="path-text">Jacketars</span><span class="path-arrow">></span>
+            <span>Jacketars | CyberPunk 2077 Jacket | Vintage</span>
+        </div>
+        <div id="product-box">
+            <img id="product-image"
+                src="https://www.jacketars.com/wp-content/uploads/2020/01/Cyberpunk-2077-Samurai-Brown-Leather-Jacket.jpg"
+                alt="Picture of Leather Jacket">
+            <div id="product-info">
+                <div>
+                    <span>Jackets</span><span id="middle-piece">|</span><span id="brand-name">Jacketars</span>
+                    <svg class="product-heart-icon">
+                        <path class="product-heart-icon-path"
+                            d="M16.5 2.62c-1.74 0-3.41.83-4.5 2.14a5.94 5.94 0 00-4.5-2.14A5.5 5.5 0 002 8.24c0 3.86 3.4 7 8.55 11.8L12 21.36l1.45-1.35C18.6 15.25 22 12.1 22 8.24a5.5 5.5 0 00-5.5-5.62z">
+
+                        </path>
+                    </svg>
+                </div>
+                <h1 id="product-title">Jacketars | CyberPunk 2077 Jacket | Vintage</h1>
+                <div id="price-box">
+                    <h2 id="product-price">$1,900</h2><span id="payment-plan-text">Pay in payments as low as
+                        $349.99 with <a href="#" id="swilo-text">Swilo!</a></span>
+                </div>
+                <form id="order-fulfillment-form">
+                    <input class="radio-button" type="radio" id="delivery" name="order-fulfillment-option"
+                        value="delivery">
+                    <label class="radio-labels" for="delivery">Delivery</label><span class="label-extra-info"> (update
+                        delivery address)</span><br>
+                    <input class="radio-button" type="radio" id="pickup" name="order-fulfillment-option" value="pickup">
+                    <label class="radio-labels" for="pickup">Pickup</label><span class="label-extra-info"> from SellHub
+                        Desk Antioch (9.1mi)</span>
+                </form>
+                <div id="size-box">
+                    <h3 id="size-title">Size</h3>
+                    <hr class="small-horizontal-line">
+                    <div id="size-option-box">
+                        <input class="size-radio" type="radio" id="XS" name="size-selection" value="XS">
+                        <label class="size-radio-text" for="XS">XS</label>
+                        <input class="size-radio" type="radio" id="S" name="size-selection" value="S">
+                        <label class="size-radio-text" for="S">S</label>
+                        <input class="size-radio" type="radio" id="M" name="size-selection" value="M">
+                        <label class="size-radio-text" for="M">M</label>
+                        <input class="size-radio" type="radio" id="L" name="size-selection" value="L">
+                        <label class="size-radio-text" for="L">L</label>
+                        <input class="size-radio" type="radio" id="XL" name="size-selection" value="XL">
+                        <label class="size-radio-text" for="XL">XL</label>
+                        <input class="size-radio" type="radio" id="XXL" name="size-selection" value="XXL">
+                        <label class="size-radio-text" style="margin-right: 0;" for="XXL">XXL</label>
+                    </div>
+                </div>
+                <div id="color-box">
+                    <h3 id="color-title">Style</h3>
+                    <hr class="small-horizontal-line">
+                    <div id="color-option-box">
+                        <input class="color-radio" type="radio" id="black" name="color-selection" value="black">
+                        <label class="color-label" for="black"><img id="color-select-img"
+                                src="black-color-icon.png"></label>
+                        <input class="color-radio" type="radio" id="brown" name="color-selection" value="brown">
+                        <label for="brown"><img id="color-select-img" src="brown-color-icon.png"></label>
+                        <input class="color-radio" type="radio" id="red" name="color-selection" value="red">
+                        <label for="red"><img id="color-select-img" src="red-color-icon.png"></label>
+                    </div>
+
+
+                </div>
+                <div id="add-to-cart-box">
+                    <button id="add-to-cart-button">Add to cart</button>
+                    <p id="stock-text">6 left in stock!</p>
+                </div>
+                <p id="free-delivery-text">Free Delivery on all orders</p>
+                <hr id="horizontal-line">
+                </hr>
+                <h3 id="product-desc-title">Product Description</h3>
+                <h4 id="product-designer-title">Designer: Jacketars</h4>
+                <p id="product-desc">This exclusive Cyberpunk 2077 leather jacket is the perfect combination of fashion
+                    and functionality. Crafted from the highest-quality full grain leather, this jacket is designed to
+                    last and will age beautifully over time. The sleek and modern design features a classic snap-down
+                    collar, zip-up front closure, and two side pockets with snap closures. The interior is lined with
+                    soft and comfortable fabric for maximum warmth and comfort. Whether you're looking for an edgy twist
+                    to your everyday look, or want to represent your favorite game in style, this jacket is perfect for
+                    any fan of the Cyberpunk 2077 universe.</p>
+                <h3 style="margin-top: 45px;">Designer Facts:</h3>
+                <div id="designer-facts-box">
+                    <div class="badge-card">
+                        <img class="badge-logo" src="eco-badge.png" alt="Eco-friendly badge">
+                        <p class="badge-text">Eco Friendly Vendor</p>
+                    </div>
+                    <div class="badge-card">
+                        <img class="badge-logo" src="small-biz-badge.png" alt="Small Business Badge">
+                        <p class="badge-text">Small Business</p>
+                    </div>
+                    <div class="badge-card">
+                        <img class="badge-logo" src="certified-badge.png" alt="Certification Badge">
+                        <p class="badge-text">Pro-Seller Certified</p>
+                    </div>
+                </div>
+                <p id="extra-info-text">Prices and stock are updated by sellers and not verified by SellHub or
+                    Affilates.
+                </p>
+            </div>
+
+        </div>
+        <div id="related-products-box">
+            <h3 id="related-products-title">Related Products</h3>
+            <div id="related-products-card-box">
+                <div class="related-products-card">
+                    <img class="related-image"
+                        src="https://cdn.shopify.com/s/files/1/0279/2649/5337/products/sdljkgasdgagasdg_900x.jpg?v=1611154568"
+                        alt="Jacket Image">
+                    <p class="related-products-brand">RRL</p>
+                    <p class="related-products-name">Slim Fit Leather Moto Jacket</p>
+                    <p class="related-products-price">$2,450.00</p>
+                </div>
+                <div class="related-products-card">
+                    <img class="related-image"
+                        src="https://www.jacketsmob.com/wp-content/uploads/2022/02/Cyberpunk-2077-Samurai-Brown-Jacket.webp"
+                        alt="Jacket Image">
+                    <p class="related-products-brand">Jacketars</p>
+                    <p class="related-products-name">CyberPunk 2077 Samurai Jacket</p>
+                    <p class="related-products-price">$1,450.00</p>
+                </div>
+                <div class="related-products-card">
+                    <img class="related-image" src="https://m.media-amazon.com/images/I/714Z4t-OkiL._AC_UX569_.jpg"
+                        alt="Jacket Image">
+                    <p class="related-products-brand">KD Clothing</p>
+                    <p class="related-products-name">Killer Dark Cyberpunk Shirt</p>
+                    <p class="related-products-price">$299.89</p>
+                </div>
+                <div class="related-products-card">
+                    <img class="related-image" src="https://m.media-amazon.com/images/I/61n4jxLTokL._AC_SX679_.jpg"
+                        alt="Jacket Image">
+                    <p class="related-products-brand">RDX LED</p>
+                    <p class="related-products-name">ACYPUNK Cyberpunk Helmet LED</p>
+                    <p class="related-products-price">$5,550.00</p>
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <hr id="footer-horizontal-line">
+        <div id="info-footer">
+            <div id="email-signup-card">
+                <h4>Sign up for exclusive deals!</h4>
+                <p id="sign-up-promo-text">Sign up today for 10% off your next order!</p>
+                <input id="email-entry" type="email" name="user-email" placeholder="Enter Email Address">
+                <button id="signup-button-footer">Submit</button>
+                <p id="email-privacy-policy-text"><a href="#" id="privacy-policy-link">Click here</a> to view SellHub's
+                    privacy policy</p>
+            </div>
+            <div class="vertical-footer-line"></div>
+            <div id="about-card">
+                <h4>About</h4>
+                <a class="footer-card-links">Contact Us</a>
+                <a class="footer-card-links">Terms of Use</a>
+                <a class="footer-card-links">Privacy Policy</a>
+                <a class="footer-card-links">FAQ</a>
+                <a class="footer-card-links">Careers</a>
+                <a class="footer-card-links">Company History</a>
+                <a class="footer-card-links">Leadership</a>
+            </div>
+            <div id="account-card">
+                <h4>Account</h4>
+                <a class="footer-card-links">My Account</a>
+                <a class="footer-card-links">Create Account</a>
+                <a class="footer-card-links">Order History</a>
+                <a class="footer-card-links">Membership</a>
+                <a class="footer-card-links">Returns and Exchanges</a>
+            </div>
+            <div id="assistance-card">
+                <h4>Customer Assistance</h4>
+                <a class="footer-card-links">Live Chat</a>
+                <a class="footer-card-links">Customer Support</a>
+                <a class="footer-card-links">Shipping and Handling</a>
+                <a class="footer-card-links">Satisfaction Guarantee</a>
+                <a class="footer-card-links">Gift Cards</a>
+                <a class="footer-card-links">Holiday Shipping</a>
+                <a class="footer-card-links">Sitemap</a>
+            </div>
+            <div id="social-card">
+                <img id="footer-logo" src="SH Logo.png">
+                <p id="tagline-text">Our goal is to create a dynamic online marketplace that fosters collaboration
+                    between vendors and customers
+                </p>
+                <img id="apple-download-button" src="https://static.weedmaps.com/static/images/ios-app-store.svg"
+                    alt="ios app store download button">
+                <img src="https://static.weedmaps.com/static/images/google-play-store-badge.svg"
+                    alt="android app store download button">
+            </div>
+        </div>
+        <div id="copyright-footer">
+            <div id="socials-box">
+                <svg class="socials-svg">
+                    <path class="socials-path"
+                        d="M14.3 8.6V6.8v-.6l.3-.4.4-.3h3V2h-3.3c-1.9 0-3.2.4-4 1.1-.9.8-1.3 2-1.3 3.4v2H7V12h2.4v10h5V12h3.2l.4-3.4h-3.7z">
+                    </path>
+                </svg>
+                <svg class="socials-svg">
+                    <path class="socials-path"
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z">
+                    </path>
+                </svg>
+                <svg class="socials-svg">
+                    <path class="socials-path"
+                        d="M22 6.8l-2.4.6c1-.5 1.5-1.2 1.8-2.1-.8.4-1.6.7-2.6.9a4.1 4.1 0 0 0-3-1.2c-1 0-2 .4-2.9 1.1a3.5 3.5 0 0 0-1 3.6 12.2 12.2 0 0 1-8.5-4 3.5 3.5 0 0 0 0 3.7c.3.6.7 1 1.3 1.4-.7 0-1.3-.2-1.9-.5 0 1 .3 1.7 1 2.4.6.7 1.4 1.2 2.3 1.3a4.6 4.6 0 0 1-1.9.1A4.2 4.2 0 0 0 8 16.7a8.5 8.5 0 0 1-6 1.6 12.9 12.9 0 0 0 10.4 1 10.7 10.7 0 0 0 5.6-4.1 10.6 10.6 0 0 0 2-6.5c.7-.5 1.4-1.2 2-2z">
+                    </path>
+                </svg>
+                <svg class="socials-svg">
+                    <path class="socials-path"
+                        d="M294.8 361.2l-122 0.1 0-26 122-0.1L294.8 361.2zM377.2 213.7L356.4 93.5l-25.7 4.5 20.9 120.2L377.2 213.7zM297.8 301.8l-121.4-11.2 -2.4 25.9 121.4 11.2L297.8 301.8zM305.8 267.8l-117.8-31.7 -6.8 25.2 117.8 31.7L305.8 267.8zM321.2 238l-105-62 -13.2 22.4 105 62L321.2 238zM346.9 219.7l-68.7-100.8 -21.5 14.7 68.7 100.8L346.9 219.7zM315.5 275.5v106.5H155.6V275.5h-20.8v126.9h201.5V275.5H315.5z">
+                    </path>
+                </svg>
+            </div>
+            <p id="footer-text">Ⓒ Copyright 2022 SellHub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
