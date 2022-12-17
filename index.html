@@ -14,17 +14,16 @@
         html {
             margin: 0;
             font-family: 'Roboto', sans-serif;
+            scrollbar-width: none;
         }
 
 
 
         .project-icon {
-            width: 200px;
-            margin-top: 40px;
-            height: 200px;
-            border: 5px solid #5828e3;
-            border-radius: 5px;
-            margin-left: 80px;
+            width: 180px;
+            height: 150px;
+            margin-top: 10px;
+            margin-left: 10px;
         }
 
         .sub-title {
@@ -37,6 +36,7 @@
         header {
             background: linear-gradient(to bottom, #5828e3 60%, #780dc5 90%, #ba08f6);
             height: 100vh;
+            position: static;
         }
 
         #main-title,
@@ -47,7 +47,7 @@
         }
 
         #main-title {
-            font-size: 42px;
+            font-size: 52px;
         }
 
         #main-title-box {
@@ -60,9 +60,12 @@
         .ed-card {
             width: 200px;
             height: 200px;
-            border: 5px solid #5828e3;
+            padding: 5px;
             border-radius: 5px;
             margin-left: 80px;
+            margin-top: 40px;
+            background: linear-gradient(to bottom, #5828e3 60%, #780dc5 90%, #ba08f6);
+            text-align: center;
 
         }
 
@@ -74,6 +77,72 @@
         #main-section {
             height: 100vh;
         }
+
+        .socials-svg {
+            width: 40px;
+            height: 40px;
+            float: right;
+            margin-right: 25px;
+        }
+
+        .socials-path {
+            fill: white;
+            transform: scale(1.5);
+        }
+
+        .project-card {
+            width: 200px;
+            height: 200px;
+
+            padding: 5px;
+            border-radius: 5px;
+            margin-left: 80px;
+            margin-top: 40px;
+            background: linear-gradient(to bottom, #5828e3 60%, #780dc5 90%, #ba08f6);
+            ;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .project-title {
+            text-align: center;
+            margin-top: 7px;
+            margin-bottom: 3px;
+            font-size: 12px;
+            color: black;
+        }
+
+        #project-card-section {
+            display: flex;
+            flex-direction: row;
+            margin-left: 40px;
+        }
+
+        .ed-img {
+            width: 80px;
+            height: 80px;
+            margin-top: 12px;
+        }
+
+        .ed-date {
+            color: #ffffff7b;
+            font-size: 12px;
+        }
+
+        .ed-desc,
+        .ed-date {
+            font-size: 12px;
+        }
+
+        #social-bar {
+            height: 40px;
+            width: 200px;
+            float: right;
+            margin-top: 40%;
+            margin-right: 20px;
+        }
     </style>
 </head>
 
@@ -83,34 +152,63 @@
             <h1 id="main-title">@DangSnake</h1>
             <h2 id="main-desc">Front-End Developer</h2>
         </div>
+        <div id="social-bar">
+            <svg class="socials-svg">
+                <path class="socials-path"
+                    d="M22 6.8l-2.4.6c1-.5 1.5-1.2 1.8-2.1-.8.4-1.6.7-2.6.9a4.1 4.1 0 0 0-3-1.2c-1 0-2 .4-2.9 1.1a3.5 3.5 0 0 0-1 3.6 12.2 12.2 0 0 1-8.5-4 3.5 3.5 0 0 0 0 3.7c.3.6.7 1 1.3 1.4-.7 0-1.3-.2-1.9-.5 0 1 .3 1.7 1 2.4.6.7 1.4 1.2 2.3 1.3a4.6 4.6 0 0 1-1.9.1A4.2 4.2 0 0 0 8 16.7a8.5 8.5 0 0 1-6 1.6 12.9 12.9 0 0 0 10.4 1 10.7 10.7 0 0 0 5.6-4.1 10.6 10.6 0 0 0 2-6.5c.7-.5 1.4-1.2 2-2z">
+                </path>
+
+            </svg>
+            <svg class="socials-svg" viewBox="0 0 16 16">
+                <path class="socials-path" style="transform: scale(.7);"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+        </div>
+
     </header>
     <section id="main-section">
         <h2 class="sub-title">Projects</h2>
-        <a href="https://dangasnake.github.io/portfolio/SellHub/product_page.html" target="_blank">
-            <img class="project-icon" src="sellhub-light-1.png" />
-        </a>
-        <a href="https://dangasnake.github.io/portfolio/Otter/home_page.html" target="_blank">
-            <img class="project-icon" src="otter_2.png" />
-        </a>
-        <a href="https://dangasnake.github.io/portfolio/TicTacToe/index.html" target="_blank">
-            <img class="project-icon" src="TicTacToe.png" />
-        </a>
+        <div id="project-card-section">
+            <a href="https://dangasnake.github.io/portfolio/SellHub/product_page.html" target="_blank">
+                <div class="project-card" style="margin-left: 40px;">
+                    <img class="project-icon" src="sellhub-light-1.png" />
+                    <h4 class="project-title">E-commerece landing page</h5>
+                </div>
+
+            </a>
+            <a href="https://dangasnake.github.io/portfolio/Otter/home_page.html" target="_blank">
+                <div class="project-card">
+                    <img class="project-icon" src="otter_2.png" />
+                    <h4 class="project-title">Social Media Feed</h5>
+                </div>
+
+            </a>
+            <a href="https://dangasnake.github.io/portfolio/TicTacToe/index.html" target="_blank">
+                <div class="project-card">
+                    <img class="project-icon" src="TicTacToe.png" />
+                    <h4 class="project-title">Tic Tac Toe Game</h5>
+                </div>
+            </a>
+        </div>
         <h2 class="sub-title">Education</h2>
         <div id="ed-card-section">
             <div class="ed-card">
-                <h4>Responsive Web Design Certification</h4>
-                <span>2021 - 2022</span>
-                <span>FreeCodeCamp</span>
+                <img class="ed-img" src="cert-icon.png">
+                <h4 class="ed-title">Responsive Web Design Certification</h4>
+                <span class="ed-date">2021 - 2022</span>
+                <span class="ed-desc">FreeCodeCamp</span>
             </div>
             <div class="ed-card">
-                <h4>Responsive Web Design Certification</h4>
-                <span>2021 - 2022</span>
-                <span>FreeCodeCamp</span>
+                <img class="ed-img" src="cert-icon.png">
+                <h4 class="ed-title">JS Algorithms & Data Structures Certification</h4>
+                <span class="ed-date">2021 - 2022</span>
+                <span class="ed-desc">FreeCodeCamp</span>
             </div>
             <div class="ed-card">
-                <h4>Responsive Web Design Certification</h4>
-                <span>2021 - 2022</span>
-                <span>FreeCodeCamp</span>
+                <img class="ed-img" src="book-icon.png">
+                <h4 class="ed-title">Responsive Web Design Certification</h4>
+                <span class="ed-date">2021 - 2022</span>
+                <span class="ed-desc">FreeCodeCamp</span>
             </div>
         </div>
     </section>
