@@ -1,0 +1,51 @@
+body,
+html {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(45, 45, 45);
+}
+
+section {
+    text-align: center;
+}
+
+#game-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 306px;
+    margin: 50px auto;
+}
+
+#game-restart {
+    background-color: rgb(155, 27, 27);
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.cell {
+    font-family: "Permanent Marker", cursive;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 1px #333333;
+    border: 1px solid #67656585;
+    cursor: pointer;
+    line-height: 100px;
+    font-size: 60px;
+}
+
+header {
+    background-color: rgb(33, 33, 33);
+    height: 80px;
+    text-align: center;
+    border-bottom: 2px solid rgba(99, 97, 97, 0.364);
+}
+
+#game-title {
+    color: rgb(130, 130, 130);
+    margin: 0;
+}
