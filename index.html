@@ -6,37 +6,114 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DangSnake's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body,
         html {
             margin: 0;
+            font-family: 'Roboto', sans-serif;
         }
 
-        body {
-            background-color: rgb(42, 42, 42);
-        }
+
 
         .project-icon {
             width: 200px;
-            margin-top: 80px;
+            margin-top: 40px;
             height: 200px;
-            border: 3px solid rgb(72, 72, 72);
+            border: 5px solid #5828e3;
             border-radius: 5px;
             margin-left: 80px;
+        }
+
+        .sub-title {
+            color: rgb(170, 18, 175);
+            margin-left: 80px;
+            margin-bottom: 0px;
+            margin-top: 140px;
+        }
+
+        header {
+            background: linear-gradient(to bottom, #5828e3 60%, #780dc5 90%, #ba08f6);
+            height: 100vh;
+        }
+
+        #main-title,
+        #main-desc {
+            color: white;
+            margin-top: 0;
+            width: 300px;
+        }
+
+        #main-title {
+            font-size: 42px;
+        }
+
+        #main-title-box {
+            position: relative;
+            width: 300px;
+            left: 80px;
+            top: 400px;
+        }
+
+        .ed-card {
+            width: 200px;
+            height: 200px;
+            border: 5px solid #5828e3;
+            border-radius: 5px;
+            margin-left: 80px;
+
+        }
+
+        #ed-card-section {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #main-section {
+            height: 100vh;
         }
     </style>
 </head>
 
 <body>
-    <a href="https://dangasnake.github.io/portfolio/SellHub/product_page.html" target="_blank">
-        <img class="project-icon" src="sellhub-light-1.png" />
-    </a>
-    <a href="https://dangasnake.github.io/portfolio/Otter/home_page.html" target="_blank">
-        <img class="project-icon" src="otter_2.png" />
-    </a>
-    <a href="https://dangasnake.github.io/portfolio/TicTacToe/index.html" target="_blank">
-        <img class="project-icon" src="TicTacToe.png" />
-    </a>
+    <header>
+        <div id="main-title-box">
+            <h1 id="main-title">@DangSnake</h1>
+            <h2 id="main-desc">Front-End Developer</h2>
+        </div>
+    </header>
+    <section id="main-section">
+        <h2 class="sub-title">Projects</h2>
+        <a href="https://dangasnake.github.io/portfolio/SellHub/product_page.html" target="_blank">
+            <img class="project-icon" src="sellhub-light-1.png" />
+        </a>
+        <a href="https://dangasnake.github.io/portfolio/Otter/home_page.html" target="_blank">
+            <img class="project-icon" src="otter_2.png" />
+        </a>
+        <a href="https://dangasnake.github.io/portfolio/TicTacToe/index.html" target="_blank">
+            <img class="project-icon" src="TicTacToe.png" />
+        </a>
+        <h2 class="sub-title">Education</h2>
+        <div id="ed-card-section">
+            <div class="ed-card">
+                <h4>Responsive Web Design Certification</h4>
+                <span>2021 - 2022</span>
+                <span>FreeCodeCamp</span>
+            </div>
+            <div class="ed-card">
+                <h4>Responsive Web Design Certification</h4>
+                <span>2021 - 2022</span>
+                <span>FreeCodeCamp</span>
+            </div>
+            <div class="ed-card">
+                <h4>Responsive Web Design Certification</h4>
+                <span>2021 - 2022</span>
+                <span>FreeCodeCamp</span>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
