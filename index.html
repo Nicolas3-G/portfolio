@@ -8,13 +8,22 @@
     <title>DangSnake's Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body,
         html {
             margin: 0;
             font-family: 'Roboto', sans-serif;
             scrollbar-width: none;
+        }
+
+        @media (max-width: 600px) {
+            #project-card-section {
+                display: flex;
+                flex-direction: column;
+                background-color: red;
+                height: 800px;
+            }
         }
 
 
@@ -64,42 +73,55 @@
             border-radius: 5px;
             margin-left: 80px;
             margin-top: 40px;
+            color: black;
             background: linear-gradient(to bottom, #5828e3 60%, #780dc5 90%, #ba08f6);
             text-align: center;
+            transform: scale(0.99);
+            transition: transform .5s;
+        }
 
+        .ed-card:hover {
+            transform: scale(1.05);
         }
 
         #ed-card-section {
             display: flex;
             flex-direction: row;
+            margin-bottom: 80px;
         }
 
-        #main-section {
-            height: 100vh;
-        }
 
         .socials-svg {
             width: 40px;
             height: 40px;
             float: right;
             margin-right: 25px;
+            transition: transform 1s;
+        }
+
+        .socials-svg:hover {
+            transform: translateY(-7px);
         }
 
         .socials-path {
             fill: white;
-            transform: scale(1.5);
         }
+
 
         .project-card {
             width: 200px;
             height: 200px;
-
             padding: 5px;
             border-radius: 5px;
             margin-left: 80px;
             margin-top: 40px;
             background: linear-gradient(to bottom, #5828e3 60%, #780dc5 90%, #ba08f6);
-            ;
+            transition: transform .5s;
+            transform: scale(0.99);
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
         }
 
         a {
@@ -139,9 +161,52 @@
         #social-bar {
             height: 40px;
             width: 200px;
+            position: relative;
             float: right;
-            margin-top: 40%;
+            top: 575px;
+            right: 45px;
+
+        }
+
+        footer {
+            height: 70px;
+            background: linear-gradient(to top, #2c117d 70%, #780dc5 90%, #ba08f6);
+            text-align: center;
+        }
+
+        #footer-text {
+            color: #ee08f68e;
+            font-size: 13px;
+            font-weight: 400;
+            position: relative;
+            width: 300px;
+            top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .skill-bubble {
             margin-right: 20px;
+            background-color: #780dc5;
+            box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 10px;
+            font-size: 13px;
+            padding: 5px 10px;
+        }
+
+        .skill-bubble:hover {
+            box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+        }
+
+        #skill-bubble-bar {
+            margin-left: 33%;
+            margin-top: 20px;
+            height: 30px;
+        }
+
+        #skill-bubble-section {
+            height: 75px;
         }
     </style>
 </head>
@@ -153,21 +218,34 @@
             <h2 id="main-desc">Front-End Developer</h2>
         </div>
         <div id="social-bar">
-            <svg class="socials-svg">
-                <path class="socials-path"
-                    d="M22 6.8l-2.4.6c1-.5 1.5-1.2 1.8-2.1-.8.4-1.6.7-2.6.9a4.1 4.1 0 0 0-3-1.2c-1 0-2 .4-2.9 1.1a3.5 3.5 0 0 0-1 3.6 12.2 12.2 0 0 1-8.5-4 3.5 3.5 0 0 0 0 3.7c.3.6.7 1 1.3 1.4-.7 0-1.3-.2-1.9-.5 0 1 .3 1.7 1 2.4.6.7 1.4 1.2 2.3 1.3a4.6 4.6 0 0 1-1.9.1A4.2 4.2 0 0 0 8 16.7a8.5 8.5 0 0 1-6 1.6 12.9 12.9 0 0 0 10.4 1 10.7 10.7 0 0 0 5.6-4.1 10.6 10.6 0 0 0 2-6.5c.7-.5 1.4-1.2 2-2z">
-                </path>
+            <a href="https://twitter.com/DangSnake">
+                <svg class="socials-svg" viewBox="0 3 26 26">
+                    <path class="socials-path"
+                        d="M22 6.8l-2.4.6c1-.5 1.5-1.2 1.8-2.1-.8.4-1.6.7-2.6.9a4.1 4.1 0 0 0-3-1.2c-1 0-2 .4-2.9 1.1a3.5 3.5 0 0 0-1 3.6 12.2 12.2 0 0 1-8.5-4 3.5 3.5 0 0 0 0 3.7c.3.6.7 1 1.3 1.4-.7 0-1.3-.2-1.9-.5 0 1 .3 1.7 1 2.4.6.7 1.4 1.2 2.3 1.3a4.6 4.6 0 0 1-1.9.1A4.2 4.2 0 0 0 8 16.7a8.5 8.5 0 0 1-6 1.6 12.9 12.9 0 0 0 10.4 1 10.7 10.7 0 0 0 5.6-4.1 10.6 10.6 0 0 0 2-6.5c.7-.5 1.4-1.2 2-2z">
+                    </path>
 
-            </svg>
-            <svg class="socials-svg" viewBox="0 0 16 16">
-                <path class="socials-path" style="transform: scale(.7);"
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-            </svg>
+                </svg>
+            </a>
+            <a href="https://github.com/DangaSnake">
+                <svg class="socials-svg" viewBox="0 0 21 21">
+                    <path class="socials-path"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
         </div>
 
     </header>
     <section id="main-section">
-        <h2 class="sub-title">Projects</h2>
+        <div id="skill-bubble-section">
+            <h2 class="sub-title" style="text-align: center; margin-left: 0px; margin-top: 40px;">Skills</h2>
+            <div id="skill-bubble-bar">
+                <span class="skill-bubble">HTML</span><span class="skill-bubble">CSS</span>
+                <span class="skill-bubble">JS</span><span class="skill-bubble"> UX </span>
+                <span class="skill-bubble"> UI </span><span class="skill-bubble">Python</span>
+                <span class="skill-bubble">Git</span><span class="skill-bubble">CS</span>
+            </div>
+        </div>
+        <h2 class="sub-title" style="margin-top: 40px;">Projects</h2>
         <div id="project-card-section">
             <a href="https://dangasnake.github.io/portfolio/SellHub/product_page.html" target="_blank">
                 <div class="project-card" style="margin-left: 40px;">
@@ -192,26 +270,34 @@
         </div>
         <h2 class="sub-title">Education</h2>
         <div id="ed-card-section">
-            <div class="ed-card">
+            <a href="https://freecodecamp.org/certification/DangSnake/responsive-web-design" target="_blank"
+                class="ed-card">
                 <img class="ed-img" src="cert-icon.png">
                 <h4 class="ed-title">Responsive Web Design Certification</h4>
                 <span class="ed-date">2021 - 2022</span>
                 <span class="ed-desc">FreeCodeCamp</span>
-            </div>
-            <div class="ed-card">
+            </a>
+            <a href="https://freecodecamp.org/certification/DangSnake/javascript-algorithms-and-data-structures"
+                target="_blank" class="ed-card">
                 <img class="ed-img" src="cert-icon.png">
                 <h4 class="ed-title">JS Algorithms & Data Structures Certification</h4>
                 <span class="ed-date">2021 - 2022</span>
                 <span class="ed-desc">FreeCodeCamp</span>
-            </div>
-            <div class="ed-card">
+            </a>
+            <a class="ed-card">
                 <img class="ed-img" src="book-icon.png">
-                <h4 class="ed-title">Responsive Web Design Certification</h4>
-                <span class="ed-date">2021 - 2022</span>
-                <span class="ed-desc">FreeCodeCamp</span>
-            </div>
+                <h4 class="ed-title" style="font-size: 14px; margin-bottom: 12px;">Python Programming: An Introduction
+                    to
+                    Computer Science
+                </h4>
+                <span class="ed-date">2020 - 2021</span>
+                <span class="ed-desc">John Zelle</span>
+            </a>
         </div>
     </section>
+    <footer>
+        <p id="footer-text">E-mail | Dangsnake333@gmail.com</p>
+    </footer>
 </body>
 
 </html>
