@@ -200,7 +200,8 @@
 
         @media (max-width: 600px) {
             #skill-bubble-section {
-                height: 125px;
+                height: 145px;
+                margin-right: 80px;
             }
 
             #social-bar {
@@ -213,6 +214,8 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 width: 200px;
+                justify-content: space-around;
+                margin-right: 20px;
             }
 
             .skill-bubble {
@@ -254,6 +257,10 @@
             #ed-card-section {
                 flex-direction: column;
             }
+
+            #skills-title {
+                margin-left: 80px !important;
+            }
         }
     </style>
 </head>
@@ -284,12 +291,13 @@
     </header>
     <section id="main-section">
         <div id="skill-bubble-section">
-            <h2 class="sub-title" style="text-align: center; margin-left: 0px; margin-top: 40px;">Skills</h2>
+            <h2 class="sub-title" style="text-align: center; margin-left: 0px; margin-top: 40px;" id="skills-title">
+                Skills</h2>
             <div id="skill-bubble-bar">
-                <span class="skill-bubble">HTML</span><span class="skill-bubble">CSS</span>
-                <span class="skill-bubble">JS</span><span class="skill-bubble"> UX </span>
-                <span class="skill-bubble"> UI </span><span class="skill-bubble">Python</span>
-                <span class="skill-bubble">Git</span><span class="skill-bubble">CS</span>
+                <span class="skill-bubble">HTML</span><span class="skill-bubble">Python</span>
+                <span class="skill-bubble">CSS</span><span class="skill-bubble"> Git </span>
+                <span class="skill-bubble"> UI </span><span class="skill-bubble">JS</span>
+                <span class="skill-bubble">UX</span><span class="skill-bubble">CS</span>
             </div>
         </div>
         <h2 class="sub-title" style="margin-top: 40px;">Projects</h2>
