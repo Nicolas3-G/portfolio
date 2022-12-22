@@ -288,8 +288,19 @@
             }
         }
 
+        @media (max-height: 600px) {
+            header {
+                height: 150vh;
+            }
+
+        }
+
         /*Start media query */
         @media (max-width: 600px) {
+            html {
+                overflow-x: hidden;
+            }
+
             #skill-bubble-section {
                 height: 145px;
                 margin-right: 80px;
@@ -321,11 +332,16 @@
             }
 
             header {
-                height: 80vh;
+                height: 100vh;
             }
 
             #main-title {
                 font-size: 42px;
+                width: 255px;
+            }
+
+            #main-title-box {
+                width: 270px;
             }
 
             #project-card-section {
@@ -347,15 +363,28 @@
             }
 
             .ed-card {
-                margin-left: 90px;
+                margin-left: 0;
             }
 
             #ed-card-section {
                 flex-direction: column;
+                align-items: center;
             }
 
             #skills-title {
                 margin-left: 80px !important;
+            }
+
+            #js-arrow-button {
+                bottom: 116px;
+            }
+
+            #main-desc-after {
+                left: -75px;
+                bottom: 10px;
+                font-size: 18px;
+                width: 340px;
+                height: 80px;
             }
 
             /* End of the media query */
