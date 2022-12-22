@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>NewTube</title>
+</head>
+<style>
+    #top-table {
+        background-color: rgb(32, 32, 32);
+        height: 20px;
+        width: 100%;
+    }
+
+    body {
+        font-family: Roboto, Arial, sans-serif;
+        margin: 0;
+        background-color: rgb(22, 22, 22);
+    }
+
+    #premium-logo {
+        margin: 8px;
+        padding-top: 4px;
+        height: 25px;
+        width: 120px;
+
+    }
+
+    #search-bar {
+        width: 100%;
+        background-color: rgb(22, 21, 21);
+        height: 24px;
+        border: 1px solid rgb(54, 53, 53);
+        color: white;
+        padding-left: 12px;
+        padding-bottom: 3px;
+        padding-top: 3px;
+        font-size: 16px
+    }
+
+    #search-cell {
+        padding-right: 12px;
+    }
+
+    #logo-cell {
+        width: 380px;
+    }
+
+    #search-button-cell {
+
+        width: 40px;
+    }
+
+    #search-button {
+        background-color: rgb(53, 52, 52);
+        height: 16px;
+        color: rgb(150, 149, 149);
+        width: 15px;
+        margin-top: 3px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border: 1px solid rgb(54, 53, 53);
+        border-left: 0;
+    }
+
+    #account-image {
+        height: 32px;
+        width: 32px;
+        padding-top: 6px;
+    }
+
+    #bell-cell {
+        padding-left: 24px;
+        width: 340px;
+        text-align: right;
+    }
+
+    #account-img-cell {
+        width: 54px;
+    }
+
+    #video-window {
+        padding-left: 24px;
+        padding-top: 24px;
+        padding-bottom: 6px;
+
+    }
+
+    #list-icon {
+        height: 30px;
+        width: 30px;
+        padding-bottom: 6px;
+        padding-left: 16px;
+        padding-right: 6px;
+    }
+
+    #video-img {
+        padding-right: 30px;
+        padding-top: 6px;
+        width: 20px;
+        height: 22px;
+    }
+
+    #bell-img {
+        padding-right: 38px;
+        padding-top: 6px;
+        width: 20px;
+        height: 22px;
+    }
+
+    #grid-img {
+        padding-right: 30px;
+        padding-top: 6px;
+        padding-bottom: 2px;
+        width: 16px;
+        height: 18px;
+    }
+
+    #title-wrapper {
+        width: 590px;
+    }
+
+    #title-icon-wrapper {
+        margin-top: 35px;
+    }
+
+
+    .hashtag {
+        font-size: 12px;
+        color: rgb(62, 166, 255);
+        line-height: 2.5;
+
+    }
+
+    #video-title {
+        margin-top: 4px;
+        font-size: 18px;
+        font-weight: 400;
+        color: white;
+    }
+
+    #view-count {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgb(170, 170, 170);
+        margin-bottom: 18px;
+    }
+
+    #show-chat-box {
+        background-color: rgb(32, 32, 32);
+        width: 90%;
+        margin-left: 24px;
+        margin-bottom: 24px;
+        border: 1px solid rgb(51, 51, 51);
+        padding: 6px;
+        color: rgb(170, 170, 170);
+        font-size: 11px;
+    }
+
+    #side-box {
+        width: 400px;
+        text-align: center;
+    }
+
+    #list-box-top {
+        width: 354px;
+        margin-left: 24px;
+        height: 75px;
+        padding-left: 18px;
+        border: 1px solid rgb(51, 51, 51);
+        background-color: rgb(32, 32, 32);
+        border-bottom: none;
+        text-align: left;
+    }
+
+    #list-box {
+        border: 1px solid rgb(51, 51, 51);
+        border-top: none;
+        width: 90%;
+        margin-left: 24px;
+        padding: 6px;
+        height: 350px;
+
+    }
+
+    #liked-text {
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+
+    #private-box {
+        color: rgb(170, 170, 170);
+        background-color: rgb(70, 70, 70);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .35px;
+        padding: 4px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    #username-text {
+        color: white;
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: 6px;
+        letter-spacing: .3px;
+    }
+
+    #list-info {
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: .3px;
+        color: rgb(170, 170, 170);
+    }
+
+    #artist-pic {
+        height: 50px;
+        width: 50px;
+        padding-bottom: 100px;
+    }
+
+    #channel-name {
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    #description-wrapper {
+        height: 180px;
+        border-bottom: 1px solid rgb(51, 51, 51);
+        margin-bottom: 24px;
+        width: 1000px;
+        margin-left: 26px;
+    }
+
+    #sub-count {
+        margin-top: 4px;
+        color: rgb(170, 170, 170);
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    #descript-text {
+        margin-top: 18px;
+        color: white;
+        font-size: 15px;
+        line-height: 1.5;
+        font-weight: 400;
+    }
+
+    #show-more {
+        font-weight: 600;
+        font-size: 13px;
+        color: rgb(170, 170, 170)
+    }
+
+    .video-number {
+        color: rgb(170, 170, 170);
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .video-thumbnail {
+        width: 100px;
+        height: 55px;
+    }
+
+    .thumbnail-title {
+        color: white;
+        font-size: 14px;
+        text-align: left;
+        margin-bottom: 0;
+        margin-top: 4px;
+    }
+
+    .thumbnail-creator {
+        color: rgb(170, 170, 170);
+        font-size: 12px;
+        font-weight: 600;
+        text-align: left;
+        margin-top: 2px;
+    }
+
+    .thumbnail-rows {
+        height: 56px;
+    }
+
+    #subsribed-button {
+        color: rgb(172, 169, 169);
+        background-color: rgb(65, 64, 64);
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        font-size: 14px;
+        text-align: center;
+        display: inline;
+        margin-bottom: 140px;
+    }
+
+    #subscribe-bell {
+        width: 20px;
+        height: 22px;
+    }
+
+    #subscribe-col {
+        padding-bottom: 120px;
+        padding-right: 18px;
+        text-align: right;
+    }
+
+    #bell-col {
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 115px;
+    }
+
+    #title-table {
+        border-bottom: 1px solid rgb(51, 51, 51);
+        margin-left: 26px;
+        width: 1000px;
+    }
+
+    .title-icons {
+        height: 20px;
+        width: 22px;
+    }
+
+    .title-button-labels {
+        padding-left: 8px;
+        padding-right: 16px;
+        color: white;
+        font-weight: 600;
+    }
+
+    #selected-underline {
+        display: inline;
+        border-bottom: 3px solid white;
+        padding-bottom: 25px;
+        padding-left: 10px;
+
+    }
+
+    .thumbnail-large {
+        height: 94px;
+        width: 168px;
+    }
+
+    .thumbnail-large-title {
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left;
+        margin-bottom: 0;
+        margin-top: 4px;
+    }
+
+    .thumbnail-large-creator {
+        color: rgb(170, 170, 170);
+        font-size: 12px;
+        font-weight: 600;
+        text-align: left;
+        margin-top: 8px;
+        margin-bottom: 4px;
+    }
+
+    .thumbnail-large-views {
+        color: rgb(170, 170, 170);
+        font-size: 12px;
+        font-weight: 600;
+        text-align: left;
+        margin-top: 4px;
+    }
+
+    .thumbnail-large-text-wrapper {
+        padding-left: 4px;
+        padding-bottom: 12px;
+    }
+
+    #spacer-bottom {
+        height: 60px;
+    }
+</style>
+
+<body>
+    <table id="top-table">
+        <tr>
+            <td id="logo-cell"><img id="list-icon" src="list_icon.png" alt="list icon"><img id="premium-logo"
+                    src="youtubeprem_logo.png" alt="youtube-logo"></td>
+            <td id="search-cell"><input id="search-bar" type="text" name="search-bar" placeholder="Search"></td>
+            <td id="search-button-cell"><img id="search-button" src="search-icon.png" /></td>
+            <td id="bell-cell">
+                <img id="video-img" src="video-add.png" alt="video icon">
+                <img id="grid-img" src="grid-icon.png" alt="grid icon">
+                <img id="bell-img" src="bell_icon.png" alt="bell icon">
+            </td>
+            <td id="account-img-cell"><img id="account-image" src="account_img.png" alt="account-image"></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <video id="video-window" controls height="500" width="1000">
+                    <source src="myvideo.mp4" type="video/mp4">
+                </video>
+            </td>
+            <td id="side-box">
+                <p id="show-chat-box">SHOW CHAT REPLAY</p>
+                <div id="list-box-top">
+                    <p id="liked-text">Liked videos</p>
+                    <div>
+                        <span id="private-box">Private</span>
+                        <span id="username-text">user083904829</span>
+                        <span id="list-info">- 20 / 3,621</span>
+                    </div>
+                </div>
+                <div id="list-box">
+                    <table>
+                        <tr class="thumbnail-rows">
+                            <td class="video-number">
+                                18
+                            </td>
+                            <td>
+                                <img class="video-thumbnail"
+                                    src="https://i.ytimg.com/vi/0ka_RArXke8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAZHbrb-tEYvOKI-VoStymmDDM7oQ"
+                                    alt="doge shortcut">
+                            </td>
+                            <td>
+                                <p class="thumbnail-title">Dogs Vs Cats | Tofu the Corgi<br> | #shorts</p>
+                                <p class="thumbnail-creator">Tofu the Corgi</p>
+                            </td>
+                        </tr>
+                        <tr class="thumbnail-rows">
+                            <td class="video-number">
+                                19
+                            </td>
+                            <td>
+                                <img class="video-thumbnail"
+                                    src="https://i.ytimg.com/vi/asZRts5Ojdc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLALxh0Df6oc9ZtwE349BX-s61s9tw"
+                                    alt="video shortcut">
+                            </td>
+                            <td>
+                                <p class="thumbnail-title">Cochise - Pocket Rocket<br> [Extended] (slowed + 432Hz...</p>
+                                <p class="thumbnail-creator">eternal!</p>
+                            </td>
+                        </tr>
+                        <tr class="thumbnail-rows">
+                            <td class="video-number">
+                                20
+                            </td>
+                            <td>
+                                <img class="video-thumbnail"
+                                    src="https://i.ytimg.com/vi/MkzncIxhP9U/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCgsjVQe2f6Cfux5rrlPQtFUuE3RQ"
+                                    alt="video shortcut">
+                            </td>
+                            <td>
+                                <p class="thumbnail-title">Cochise - Pocket Rocket<br> (Official Video)</p>
+                                <p class="thumbnail-creator">cochise</p>
+                            </td>
+                        </tr>
+                        <tr class="thumbnail-rows">
+                            <td class="video-number">
+                                21
+                            </td>
+                            <td>
+                                <img class="video-thumbnail"
+                                    src="https://i.ytimg.com/vi/DZjV_vEprIA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCr32qV55NDmjIaQCRCXw2XKgU9tA"
+                                    alt="video shortcut">
+                            </td>
+                            <td>
+                                <p class="thumbnail-title">Cochise - PLASMA / KAMI<br> (Official Video)</p>
+                                <p class="thumbnail-creator">cochise</p>
+                            </td>
+                        </tr>
+                        <tr class="thumbnail-rows">
+                            <td class="video-number">
+                                22
+                            </td>
+                            <td>
+                                <img class="video-thumbnail"
+                                    src="https://i.ytimg.com/vi/FO7kgpunMig/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDCxqUYW17aAw0hrkusJmal4NVlSg"
+                                    alt="video shortcut">
+                            </td>
+                            <td>
+                                <p class="thumbnail-title">Cat Mimics Owner's Coin<br> Trick || ViralHog</p>
+                                <p class="thumbnail-creator">ViralHog</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td id="table-body-leftside-col">
+                <table id="title-table">
+                    <tr>
+                        <td>
+                            <div id="title-wrapper">
+                                <a class="hashtag" href="/">#Cochise</a>
+                                <a class="hashtag" href="/">#PocketRocket</a>
+                                <p id="video-title">Cochise - Pocket Rocket (Official Video)</p>
+                                <p id="view-count">573,127 views • Premiered Aug 19, 2021</p>
+                            </div>
+                        </td>
+                        <td id="title-icons-col">
+                            <div id="title-icon-wrapper">
+                                <span>
+                                    <div id="selected-underline"">
+							<span><img class=" title-icons" src="thumbs_up_icon.png" alt="thumbs up icon" />
+                                </span>
+                                <span class="title-button-labels">53k</span>
+                                <span><img class="title-icons" src="thumbs-down-icon.png"
+                                        alt="thumbs down icon" /></span>
+                                <span class="title-button-labels" style="padding-right: 4px;">321</span>
+                            </div>
+                            <span><img class="title-icons" style="padding-left: 18px;" src="share-icon.png"
+                                    alt="share icon" /></span>
+                            <span class="title-button-labels">Share</span>
+                            <span><img class="title-icons" src="add_to_list_icon.png" alt="add to list icon" /></span>
+                            <span class="title-button-labels">Save</span>
+                            <span><img class="title-icons" src="more_icon.png" alt="more icon" /></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table id="description-wrapper">
+                    <tr>
+                        <td width="70">
+                            <img id="artist-pic" src="cochise.png" alt="Cochise Profile Pic">
+                        </td>
+                        <td>
+                            <p id="channel-name">cochise ♪ </p>
+                            <p id="sub-count">241k subscribers</p>
+                            <p id="descript-text">
+                                Official video for “Pocket Rocket” by Cochise<br>
+                                <br>
+                                Listen & Download “Pocket Rocket” out now: <a style="color: rgb(62, 166, 255);"
+                                    href="/">https://cochise.lnk.to/PocketRocket</a>
+                            </p>
+                            <p id="show-more">SHOW MORE</p>
+                        </td>
+                        <td id="subscribe-col">
+                            <p id="subsribed-button">SUBSCRIBED</p>
+                        </td>
+                        <td id="bell-col">
+                            <img id="subscribe-bell" src="bell_icon.png" alt="bell icon">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td rowspan="2">
+                <img src="button_all.png" alt="all button" style="height: 32px; width: 43px; padding-left: 16px;" />
+                <img src="button_rapping.png" alt="rapping button"
+                    style="height: 32px; width: 75px; padding-left: 8px;" />
+                <img src="button_related.png" alt="related button"
+                    style="height: 32px; width: 75px; padding-left: 8px;" />
+                <img src="button_recently-uploaded.png" alt="recently uploaded button"
+                    style="height: 32px; width: 145px; padding-left: 8px;" />
+                <table style="padding-top: 14px;">
+                    <tr>
+                        <td>
+                            <img class="thumbnail-large"
+                                src="https://i.ytimg.com/an_webp/DZjV_vEprIA/mqdefault_6s.webp?du=3000&sqp=CICdm4kG&rs=AOn4CLCz8hFplhtYGDA-Hc6y_G0z9pkbLw"
+                                alt="video thumbnail">
+                        </td>
+                        <td class="thumbnail-large-text-wrapper">
+                            <p class="thumbnail-large-title">Cochise - PLASMA / KAMI<br> (Official Video)</p>
+                            <p class="thumbnail-large-creator">cochise ♪</p>
+                            <p class="thumbnail-large-views">322K views • 2 weeks ago</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="thumbnail-large"
+                                src="https://i.ytimg.com/an_webp/1YlxJrSaqPw/mqdefault_6s.webp?du=3000&sqp=CLi7m4kG&rs=AOn4CLBSow8S4EBLc7SU_Ry3wtP8RrWP7A"
+                                alt="video thumbnail">
+                        </td>
+                        <td class="thumbnail-large-text-wrapper">
+                            <p class="thumbnail-large-title">4 AM Coding Session - Lofi<br> Hip Hop Mix [Study &
+                                Coding...
+                            </p>
+                            <p class="thumbnail-large-creator">Lofi Ghostie</p>
+                            <p class="thumbnail-large-views">386K views • 4 weeks ago</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="thumbnail-large"
+                                src="https://i.ytimg.com/an_webp/L5ByY30tfvM/mqdefault_6s.webp?du=3000&sqp=CI-2m4kG&rs=AOn4CLDqoWryX3XWtaHO2ncESILbJBvT6A"
+                                alt="video thumbnail">
+                        </td>
+                        <td class="thumbnail-large-text-wrapper">
+                            <p class="thumbnail-large-title">Cochise - Tell Em ft. $NOT<br> (Directed by Cole Bennett)
+                            </p>
+                            <p class="thumbnail-large-creator">Lyrical Lemonade</p>
+                            <p class="thumbnail-large-views">15M views • 2 months ago</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td id="spacer-bottom">
+            </td>
+        </tr>
+    </table>
+</body>
