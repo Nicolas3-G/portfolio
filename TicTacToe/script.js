@@ -1,26 +1,57 @@
 const statusDisplay = document.querySelector('#game-status');
+const nameInput = document.querySelector('#name-input');
+const nameBox = document.querySelector('#name-box');
+const playerOneWinCount = document.querySelector('#player-1-wins');
+const playerTwoWinCount = document.querySelector('#player-2-wins');
+const gameContainer = document.querySelector('.game-container');
 
-let gameActive = true;
+
+let gameActive = false;
 
 let currentPlayer = "X";
+let playerOneName = "";
+let playerTwoName = "";
+
+let playerOneWins = 0;
+let playerTwoWins = 0;
 
 let gameState = ["", "", "", "", "", "", "", "", ""];
 
-const winningMessage = () => `Player ${currentPlayer} has won!`;
+
+const winningMessage = () => {
+    if (currentPlayer == "X") {
+        return `Player ${playerOneName} has won!`
+    } else {
+        return `Player ${playerTwoName} has won!`
+    }
+};
 const drawMessage = () => `Game ended in a draw!`;
-const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+
+const currentPlayerTurn = () => {
+    if (currentPlayer == "X") {
+        if (playerOneName != "") {
+            return `It's ${playerOneName}'s turn`
+        } else {
+            return `It's Player 1's turn`
+        }
+    } else {
+        return `It's ${playerTwoName}'s turn`
+    }
+};
 
 statusDisplay.innerHTML = currentPlayerTurn();
 
 function handleCellPlayed(clickedCell, clickedCellIndex) {
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
+    gameContainer.classList.add('shake');
 
 }
 
 function handlePlayerChange() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     statusDisplay.innerHTML = currentPlayerTurn();
+    handleCardHighlight();
 
 }
 
@@ -47,6 +78,7 @@ function handleResultValidation() {
             continue;
         }
         if (a === b && b === c) {
+            handleHighlightWin(winCondition);
             roundWon = true;
             break
         }
@@ -54,6 +86,8 @@ function handleResultValidation() {
 
     if (roundWon) {
         statusDisplay.innerHTML = winningMessage();
+        gameContainer.classList.add('win');
+        handleAddWins();
         gameActive = false;
         return;
     }
@@ -87,9 +121,78 @@ function handleRestartGame() {
     currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
     statusDisplay.innerHTML = currentPlayerTurn();
-    document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
+    document.querySelectorAll('.cell').forEach(cell => {
+        cell.innerHTML = "";
+        cell.style.color = "black";
+    });
+    gameContainer.classList.remove('win');
+
 
 }
 
+function handleEnterNameClick() {
+    if (playerOneName == "") {
+        if (!nameInput.value) {
+            playerOneName = "Player 1";
+        } else {
+            playerOneName = nameInput.value;
+        }
+        document.querySelector('#player-1-name-text').innerHTML = playerOneName;
+        nameInput.value = "";
+        nameInput.placeholder = "Player 2";
+    } else {
+        if (!nameInput.value) {
+            playerTwoName = "Player 2";
+        } else {
+            playerTwoName = nameInput.value;
+        }
+
+        document.querySelector('#player-2-name-text').innerHTML = playerTwoName;
+        nameBox.style.visibility = "hidden";
+        gameActive = true;
+        handleCardHighlight();
+        statusDisplay.innerHTML = currentPlayerTurn()
+    }
+    console.log(playerOneName);
+    console.log(playerTwoName);
+
+}
+
+function handleCardHighlight() {
+    if (currentPlayer == "X") {
+        document.querySelector('#player-1-card').classList.add('highlight');
+        document.querySelector('#player-2-card').classList.remove('highlight');
+    } else if (currentPlayer == "O") {
+        document.querySelector('#player-2-card').classList.add('highlight');
+        document.querySelector('#player-1-card').classList.remove('highlight');
+    }
+
+}
+
+function handleAddWins() {
+    if (currentPlayer == "X") {
+        playerOneWins += 1;
+    } else {
+        playerTwoWins += 1;
+    }
+    playerOneWinCount.innerHTML = playerOneWins;
+    playerTwoWinCount.innerHTML = playerTwoWins;
+
+}
+
+function handleHighlightWin(winningIndexes) {
+    console.log("Handling Highlight Win" + winningIndexes);
+    document.querySelectorAll('.cell').forEach(cell => {
+        if (winningIndexes.includes(parseInt(cell.getAttribute("data-cell-index")))) {
+            cell.style.color = "rgb(7, 104, 7)";
+        }
+    })
+}
+
+
+document.querySelector('#enter-name-button').addEventListener('click', handleEnterNameClick);
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
 document.querySelector('#game-restart').addEventListener('click', handleRestartGame);
+gameContainer.addEventListener('animationend', function () {
+    gameContainer.classList.remove("shake");
+})

@@ -16,20 +16,47 @@
     </header>
 
     <section>
-        <div id="game-container">
-            <div data-cell-index="0" class="cell"></div>
-            <div data-cell-index="1" class="cell"></div>
-            <div data-cell-index="2" class="cell"></div>
-            <div data-cell-index="3" class="cell"></div>
+        <div id="game-container" class="game-container">
+            <div style="border: none;" data-cell-index="0" class="cell"></div>
+            <div style="border-top: none; border-bottom: none;" data-cell-index="1" class="cell"></div>
+            <div style="border: none;" data-cell-index="2" class="cell"></div>
+            <div style="border-left: none; border-right: none;" data-cell-index="3" class="cell"></div>
             <div data-cell-index="4" class="cell"></div>
-            <div data-cell-index="5" class="cell"></div>
-            <div data-cell-index="6" class="cell"></div>
-            <div data-cell-index="7" class="cell"></div>
-            <div data-cell-index="8" class="cell"></div>
+            <div style="border-right: none; border-left: none;" data-cell-index="5" class="cell"></div>
+            <div style="border: none;" data-cell-index="6" class="cell"></div>
+            <div style="border-bottom: none; border-top: none;" data-cell-index="7" class="cell"></div>
+            <div style="border: none;" data-cell-index="8" class="cell"></div>
         </div>
         <h2 id="game-status"></h2>
         <button id="game-restart">Restart Game</button>
+        <div id="name-box">
+            <h3 id="enter-name-title">Please Enter your name:</h3>
+            <input id="name-input" type="text" name="player_name" placeholder="Player 1">
+            <button id="enter-name-button">Enter</button>
+        </div>
+        <div id="player-1-card" class="player-card">
+            <h3 class="player-title">Player 1</h3>
+            <p class="player-name" id="player-1-name-text">Player 1</p>
+            <p class="player-icon">X</p>
+            <span class="player-wins">Wins:</span>
+            <span class="player-wins-number" id="player-1-wins">0</span>
+        </div>
+        <div id="player-2-card" class="player-card">
+            <h3 class="player-title">Player 2</h3>
+            <p class="player-name" id="player-2-name-text">Player 2</p>
+            <p class="player-icon">O</p>
+            <span class="player-wins">Wins:</span>
+            <span class="player-wins-number" id="player-2-wins">0</span>
+        </div>
     </section>
+    <footer>
+        <span id="footer-text">Handcrafted by <a href="https://dangasnake.github.io/portfolio/"
+                id="snake-title">DangSnake</a></span>
+        <svg id="snake-svg" viewBox="0 0 512 512">
+            <path id="snake-path"
+                d="M31.7 83.93C9.492 194.9 191.1 121 195.3 136.6c2.4 8.9-156.4 35.9-163.56 95.4-16.49 137 321.16.7 323.76 8.9 5.5 17.8-218.6 46.4-149.8 157.7 39.7 64.2 114.8 32 164.1 33.4 26.3 42.4 66.5 60.5 96 48 27.7-11.7 14.8-45.6 1.5-76.5l-14.2 15.7 7.7-28.7c-40.3-63.2-182.5-6.2-188.3-19.9-10.2-24.1 216.2-41.5 180.2-158.7-29-94.2-332.7 21.2-332.9 6.1-.2-20.9 188.1-50.4 167.4-94.9-34.3-73.82-210.22 40.8-224.95-33.59C57 63.05 140.3 42.6 132.3 35.24 106.4 11.35 37.92 52.9 31.7 83.93zM387.8 390.8l35.9 33.6-43.5-12.4z" />
+        </svg>
+    </footer>
     <script src="script.js"></script>
 
 </body>

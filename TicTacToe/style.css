@@ -5,11 +5,12 @@ html {
 }
 
 body {
-    background-color: rgb(45, 45, 45);
+    background-color: rgb(255, 255, 255);
 }
 
 section {
     text-align: center;
+    height: 80vh;
 }
 
 #game-container {
@@ -17,6 +18,73 @@ section {
     grid-template-columns: repeat(3, auto);
     width: 306px;
     margin: 50px auto;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #9504d4;
+    box-shadow: 0 25px 20px rgba(0, 0, 0, 0.518), 10px 6px 6px rgba(0, 0, 0, 0.31);
+}
+
+#game-container.shake {
+    animation-name: shake;
+    animation-duration: .2s;
+}
+
+#game-container.win {
+    animation-name: win-shake;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes win-shake {
+    0% {
+        transform: rotate(0);
+    }
+
+    20% {
+        transform: rotate(-5deg);
+    }
+
+    40% {
+        transform: rotate(5deg);
+    }
+
+    60% {
+        transform: rotate(-5deg);
+    }
+
+    80% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+
+    20% {
+        transform: rotate(-1deg);
+    }
+
+    40% {
+        transform: rotate(1deg);
+    }
+
+    60% {
+        transform: rotate(-1deg);
+    }
+
+    80% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
 }
 
 #game-restart {
@@ -31,21 +99,150 @@ section {
     font-family: "Permanent Marker", cursive;
     width: 100px;
     height: 100px;
-    box-shadow: 0 0 0 1px #333333;
-    border: 1px solid #67656585;
+    border: 2px dashed #00000095;
     cursor: pointer;
     line-height: 100px;
     font-size: 60px;
 }
 
 header {
-    background-color: rgb(33, 33, 33);
+    background-color: #540377;
     height: 80px;
     text-align: center;
     border-bottom: 2px solid rgba(99, 97, 97, 0.364);
 }
 
 #game-title {
-    color: rgb(130, 130, 130);
+    color: white;
     margin: 0;
+}
+
+#name-box {
+    background: rgb(17, 17, 17);
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    position: absolute;
+    top: 250px;
+    left: 43.25%;
+}
+
+#enter-name-button {
+    background-color: rgb(10, 122, 34);
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Noto Sans', sans-serif;
+    position: relative;
+    top: 25px;
+
+}
+
+#name-input {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10px;
+}
+
+.player-card {
+    width: 130px;
+    height: 160px;
+    border-radius: 25%;
+    background-color: #9504d4;
+    color: white;
+    box-shadow: 5px 10px 20px rgb(33, 33, 33);
+}
+
+.player-card.highlight {
+    background-color: #9604d4bc;
+    animation-name: move-up;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move-up {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+#player-1-card {
+    position: absolute;
+    top: 200px;
+    left: 400px;
+}
+
+#player-2-card {
+    position: absolute;
+    top: 200px;
+    right: 400px;
+}
+
+.player-name {
+    font-size: 12px;
+    opacity: .5;
+    margin-top: 0;
+}
+
+.player-title {
+    margin-bottom: 3px;
+    margin-top: 8px;
+}
+
+.player-icon {
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.player-wins {
+    font-size: 12px;
+    opacity: .5;
+    position: relative;
+    top: 15px;
+}
+
+.player-wins-number {
+    font-size: 12px;
+    opacity: .5;
+    position: relative;
+    top: 15px;
+}
+
+#enter-name-title {
+    font-size: 11px;
+    color: white;
+    margin: 0;
+    position: relative;
+    top: 5px;
+}
+
+footer {
+    text-align: center;
+}
+
+#footer-text {
+    font-size: 12px;
+}
+
+#snake-title {
+    font-size: 12px;
+    color: #9504d4;
+    font-weight: bold;
+}
+
+#snake-svg {
+    height: 20px;
+    width: 20px;
+}
+
+#snake-path {
+    fill: #9504d4;
 }
