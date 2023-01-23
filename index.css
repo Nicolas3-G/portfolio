@@ -185,7 +185,7 @@ footer {
 }
 
 #skill-bubble-bar {
-    margin-left: 29.5%;
+    margin-left: 31%;
     margin-top: 20px;
     height: 30px;
 }
@@ -417,8 +417,7 @@ footer {
     }
 
     #skill-bubble-section {
-        height: 145px;
-        margin-right: 80px;
+        height: 175px;
     }
 
     #social-bar {
@@ -430,9 +429,10 @@ footer {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 200px;
+        width: 300px;
         justify-content: space-around;
-        margin-right: 20px;
+        position: absolute;
+        right: 6%;
     }
 
     .skill-bubble {
@@ -491,9 +491,6 @@ footer {
         align-items: center;
     }
 
-    #skills-title {
-        margin-left: 80px !important;
-    }
 
     #js-arrow-button {
         bottom: 116px;
