@@ -418,6 +418,8 @@ footer {
 
     #skill-bubble-section {
         height: 175px;
+        width: 300px;
+        margin: 0 auto;
     }
 
     #social-bar {
@@ -430,13 +432,13 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
         width: 300px;
-        justify-content: space-around;
-        position: absolute;
-        right: 6%;
+        justify-content: space-evenly;
+        margin-left: 0;
     }
 
     .skill-bubble {
         margin-bottom: 5px;
+        margin-right: 0;
     }
 
     /* media query */
