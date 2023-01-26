@@ -509,6 +509,15 @@ footer {
         height: 80px;
     }
 
+    #tool-tip {
+        position: static !important;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
     /* End of the media query */
 }
 
