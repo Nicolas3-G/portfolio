@@ -117,9 +117,9 @@ a {
 
 .project-title {
     text-align: center;
-    margin-top: 7px;
+    margin-top: 3px;
     margin-bottom: 3px;
-    font-size: 12px;
+    font-size: 14px;
     color: black;
 }
 
@@ -200,7 +200,6 @@ footer {
     position: relative;
     left: 225px;
     bottom: 72px;
-
 }
 
 #arrow-icon {
@@ -511,4 +510,20 @@ footer {
     }
 
     /* End of the media query */
+}
+
+.tech-text {
+    font-size: 12px;
+    margin: 0;
+    text-align: center;
+}
+
+#tool-tip {
+    position: absolute;
+    left: 200px;
+    background-color: rgb(170, 18, 175);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    bottom: -185px;
 }
